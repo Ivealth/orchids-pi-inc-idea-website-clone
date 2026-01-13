@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #161a1f;
+  --color-foreground: #ffffff;
+
+  --color-card: #ffffff0f;
+  --color-card-foreground: #ffffff;
+
+  --color-popover: #1c2127;
+  --color-popover-foreground: #ffffff;
+
+  --color-primary: #5fc4ff;
+  --color-primary-foreground: #161a1f;
+
+  --color-secondary: #2c353f;
+  --color-secondary-foreground: #ffffff;
+
+  --color-muted: #2c353f;
+  --color-muted-foreground: #b8c0c5;
+
+  --color-accent: #e0f0ff;
+  --color-accent-foreground: #161a1f;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-border: #30363d;
+  --color-input: #ffffff0a;
+  --color-ring: #5fc4ff;
+
+  --color-chart-1: #5fc4ff;
+  --color-chart-2: #2b7fff;
+  --color-chart-3: #ffffff;
+  --color-chart-4: #b8c0c5;
+  --color-chart-5: #30363d;
+
+  --color-sidebar: #1c2127;
+  --color-sidebar-foreground: #b8c0c5;
+  --color-sidebar-primary: #5fc4ff;
+  --color-sidebar-primary-foreground: #161a1f;
+  --color-sidebar-accent: #2c353f;
+  --color-sidebar-accent-foreground: #ffffff;
+  --color-sidebar-border: #30363d;
+  --color-sidebar-ring: #5fc4ff;
+
+  --color-sider-active: #1d252f;
+  --color-text-tertiary: #c8c8c8;
+  --color-vip-badge: #353a3d69;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --radius-sm: 4px;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: #30363d;
+  }
+}
+
+@layer base {
+  :root {
+    --background: #161a1f;
+    --foreground: #ffffff;
+    --card: #ffffff0f;
+    --card-foreground: #ffffff;
+    --popover: #1c2127;
+    --popover-foreground: #ffffff;
+    --primary: #5fc4ff;
+    --primary-foreground: #161a1f;
+    --secondary: #2c353f;
+    --secondary-foreground: #ffffff;
+    --muted: #2c353f;
+    --muted-foreground: #b8c0c5;
+    --accent: #e0f0ff;
+    --accent-foreground: #161a1f;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --border: #30363d;
+    --input: #ffffff0a;
+    --ring: #5fc4ff;
+    --radius: 8px;
+    --sidebar-background: #1c2127;
+    --sidebar-foreground: #b8c0c5;
+    --sidebar-primary: #5fc4ff;
+    --sidebar-primary-foreground: #161a1f;
+    --sidebar-accent: #2c353f;
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: #30363d;
+    --sidebar-ring: #5fc4ff;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-foreground);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .glass-morphism {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .text-meta {
+    font-size: 12px;
+    color: var(--color-muted-foreground);
+  }
+
+  .text-badge {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-muted-foreground);
+  }
+}
